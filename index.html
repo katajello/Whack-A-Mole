@@ -10,6 +10,7 @@
         border: 10px solid red;
         margin: 0 auto;
         background-color:green;
+        cursor: url(mallet.png), auto;
       }
 
       .hole {
@@ -33,9 +34,6 @@
         background-color: red;
       }
     </style>
-
-
-
   </head>
   <body>
     <h2 id="score-board"></h2>
@@ -50,42 +48,39 @@
       <div class="hole"></div>
       <div class="hole"></div>
     </div>
-  </body>
-  <script>
-  // var firstHole = document.querySelector('.hole');
-  //
-  //   firstHole.addEventListener('click', function() {
-  //     console.log(this);
-  //     console.log(this === firstHole);
-  //     this.innerHTML = '<img src="mole.png">'
-  //   })
-  var moleHole = document.querySelectorAll('.hole');
-  var scoreBoard = document.querySelector('#score-board')
-  var score = 0
-  function pickRandom(upTo) {
-      return Math.floor( Math.random() * upTo);
-    }
-    var numberOfHoles = moleHole.length;
-    moleHole[pickRandom(numberOfHoles)].innerHTML = '<img src="mole.png">';
 
-  for(var i = 0; i < moleHole.length; i = i + 1) {
-      moleHole[i].addEventListener('click', function(){
-        console.log(this);
-        console.log(this.innerHTML);
-
-      if (this.innerHTML === '<img src="mole.png">') {
-          console.log(this.innerHTML === '<img src="mole.png">');
-          this.innerHTML = ""
-          score = score + 1;
-          scoreBoard.innerHTML = score + " whacks"
-
-          moleHole[pickRandom(numberOfHoles)].innerHTML = '<img src="mole.png">';
-          }
-
-        })
+    <script>
+    // var firstHole = document.querySelector('.hole');
+    //
+    //   firstHole.addEventListener('click', function() {
+    //     console.log(this);
+    //     console.log(this === firstHole);
+    //     this.innerHTML = '<img src="mole.png">'
+    //   })
+    var moleHole = document.querySelectorAll('.hole');
+    var scoreBoard = document.querySelector('#score-board')
+    var score = 0
+    function pickRandom(upTo) {
+        return Math.floor( Math.random() * upTo);
       }
+      var numberOfHoles = moleHole.length;
+      moleHole[pickRandom(numberOfHoles)].innerHTML = '<img src="mole.png">';
 
+    for(var i = 0; i < moleHole.length; i = i + 1) {
+        moleHole[i].addEventListener('click', function(){
+          console.log(this);
+          console.log(this.innerHTML);
 
+        if (this.innerHTML === '<img src="mole.png">') {
+            console.log(this.innerHTML === '<img src="mole.png">');
+            this.innerHTML = ""
+            score = score + 1;
+            scoreBoard.innerHTML = score + " whacks"
 
-  </script>
+            moleHole[pickRandom(numberOfHoles)].innerHTML = '<img src="mole.png">';
+            }
+          })
+        }
+      </script>
+  </body>
 </html>
