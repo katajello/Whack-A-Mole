@@ -54,10 +54,28 @@
   //   })
   var moleHole = document.querySelectorAll('.hole');
 
+  function pickRandom(upTo) {
+      return Math.floor( Math.random() * upTo);
+    }
+    var numberOfHoles = moleHole.length;
+    moleHole[pickRandom(numberOfHoles)].innerHTML = '<img src="mole.png">';
+
   for(var i = 0; i < moleHole.length; i = i + 1) {
       moleHole[i].addEventListener('click', function(){
         console.log(this);
         console.log(this.innerHTML);
+
+      if (this.innerHTML === '<img src="mole.png">') {
+          console.log(this.innerHTML === '<img src="mole.png">');
+          this.innerHTML = ""
+
+        
+          moleHole[pickRandom(numberOfHoles)].innerHTML = '<img src="mole.png">';
+          }
+
+        })
+      }
+
 
 
   </script>
