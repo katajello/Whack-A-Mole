@@ -45,13 +45,19 @@
     </div>
   </body>
   <script>
-  var firstHole = document.querySelector('.hole');
+  // var firstHole = document.querySelector('.hole');
+  //
+  //   firstHole.addEventListener('click', function() {
+  //     console.log(this);
+  //     console.log(this === firstHole);
+  //     this.innerHTML = '<img src="mole.png">'
+  //   })
+  var moleHole = document.querySelectorAll('.hole');
 
-    firstHole.addEventListener('click', function() {
-      console.log(this);
-      console.log(this === firstHole);
-      this.innerHTML = '<img src="mole.png">'
-    })
+  for(var i = 0; i < moleHole.length; i = i + 1) {
+      moleHole[i].addEventListener('click', function(){
+        console.log(this);
+        console.log(this.innerHTML);
 
 
   </script>
