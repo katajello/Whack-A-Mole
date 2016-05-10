@@ -26,12 +26,16 @@
         margin-top: 50px;
         height: 60%;
       }
+      h2 {
+      text-align: center;
+      }
     </style>
 
 
 
   </head>
   <body>
+    <h2 id="score-board"></h2>
     <div>
       <div class="hole"></div>
       <div class="hole"></div>
@@ -53,7 +57,8 @@
   //     this.innerHTML = '<img src="mole.png">'
   //   })
   var moleHole = document.querySelectorAll('.hole');
-
+  var scoreBoard = document.querySelector('#score-board')
+  var score = 0
   function pickRandom(upTo) {
       return Math.floor( Math.random() * upTo);
     }
@@ -68,8 +73,9 @@
       if (this.innerHTML === '<img src="mole.png">') {
           console.log(this.innerHTML === '<img src="mole.png">');
           this.innerHTML = ""
+          score = score + 1;
+          scoreBoard.innerHTML = score + " whacks"
 
-        
           moleHole[pickRandom(numberOfHoles)].innerHTML = '<img src="mole.png">';
           }
 
